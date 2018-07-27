@@ -114,7 +114,7 @@ class Attention(Layer):
 
 
         
-path = '../input/jigsaw-toxic-comment-classification-challenge/'
+path = '../input/data'
 path1 = '../input/glove-840b-tokens-300d-vectors/'
 EMBEDDING_FILE=path1+'glove.840B.300d.txt'
 TRAIN_DATA_FILE=path+'train.csv'
@@ -305,84 +305,6 @@ sample_submission = pd.read_csv("../input/sample_submission.csv")
 sample_submission[classes_to_predict] = y_test_predicted
 
 sample_submission.to_csv('%.4f_'%(bst_val_score)+STAMP+'.csv', index=False)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-02
-
-
 
 
 
