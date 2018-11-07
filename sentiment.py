@@ -35,7 +35,7 @@ from keras import backend as K
 from keras.engine.topology import Layer
 #from keras import initializations
 from keras import initializers, regularizers, constraints
-from sklearn.metrices import roc_auc_score
+from sklearn.metrics import roc_auc_score
 
 
 class Attention(Layer):
@@ -64,7 +64,7 @@ class Attention(Layer):
                                       shape=(input_shape[-1],),
                                       initializer= self.init,
                                       constraint = self.W_constraint,
-                                      regulizer = self.W_regulizer,
+                                      regularizer = self.W_regulizer,
                                       name = '{}_W'.format(self.name))
         
         self.features_dim = input_shape[-1]
@@ -73,7 +73,7 @@ class Attention(Layer):
             self.b = self.add_weight((input_shape[1],),
                                      initializer='zero',
                                      name='{}_b'.format(self.name),
-                                     regularizer=self.b_regularizer,
+                                     regularizer=self.b_regulizer,
                                      constraint=self.b_constraint)
         else:
             self.b = None
